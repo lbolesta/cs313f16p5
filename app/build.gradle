@@ -42,4 +42,5 @@ dependencies {
     compile 'junit:junit:4.12'
     compile 'net.sourceforge.streamsupport:streamsupport:1.5.1'
     testCompile 'org.robolectric:robolectric:2.4'
+    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
 }
