@@ -1,100 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/root"
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:background="@color/lt_grey"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:baselineAligned="false">
+    android:baselineAligned="false"
+    android:weightSum="1">
 
-    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/gridview"
+    <com.oreilly.demo.android.pa.uidemo.view.MonsterView
+
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:columnCount="8" >
-        <Button
-            style="@style/grid_cell"
-            />
-        <Button
-            style="@style/grid_cell"
-            />
-        <Button
-            style="@style/grid_cell"
-            />
-        <Button
-            style="@style/grid_cell"
-            />
-        <Button
-            style="@style/grid_cell"
-            />
-        <Button
-            style="@style/grid_cell"
-            />
-        <Button
-            style="@style/grid_cell"
-            />
-        <Button
-            style="@style/grid_cell"
-            />
-        <Button
-            style="@style/grid_cell"
-            />
+        android:layout_height="426dp"
+        android:id="@+id/dots" />
 
-    </GridLayout>
-
-  <com.oreilly.demo.android.pa.uidemo.view.DotView
-        android:id="@+id/dots"
-        android:focusableInTouchMode="true"
+    <TextView
+        android:text="TextView"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textSize="36sp"
+        android:textColor="@android:color/holo_blue_light" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:textSize="36sp"
+        android:textColor="@android:color/holo_green_light" /><![CDATA[
+
+    android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="@color/white"
-        />
-    
-  <LinearLayout
-      android:orientation="horizontal"
-      android:background="@color/grey"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/text1"
-        android:text="@string/defaultText"
-        android:focusable="false"
-        android:layout_height="wrap_content"
-        android:layout_width="0dp"
-        android:layout_weight="1"/>
-
-    <EditText
-        android:id="@+id/text2"
-        android:text="@string/defaultText"
-        android:focusable="false"
-        android:layout_height="wrap_content"
-        android:layout_width="0dp"
-        android:layout_weight="1"/>
-  </LinearLayout>
-
-  <LinearLayout
-      android:orientation="horizontal"
-      android:background="@color/dk_grey"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content">
-
-    <Button
-        android:id="@+id/button1"
-        android:text="@string/labelRed"
-        android:textColor="@color/red"
-        android:layout_height="wrap_content"
-        android:layout_width="0dp"
-        android:layout_weight="1"/>
-
-    <Button
-        android:id="@+id/button2"
-        android:text="@string/labelGreen"
-        android:textColor="@color/green"
-        android:layout_height="wrap_content"
-        android:layout_width="0dp"
-        android:layout_weight="1"/>
-  </LinearLayout>
+        android:id="@+id/view5" />
+]]>
 </LinearLayout>
