@@ -13,12 +13,13 @@ public class Monsters {
     public List<Monster> monsters;
     public int n, m;
 
+    //creating an arrayList for monsters
     public Monsters (int _n, int _m) {
         monsters = new ArrayList<Monster>();
         n = _n;
         m = _m;
     }
-
+    //adding the monsters of type Monster to the arrayList
     public void addMonster(int i, int j, int x, int y, int r) {
         monsters.add(new Monster(i, j, x, y, r));
     }
