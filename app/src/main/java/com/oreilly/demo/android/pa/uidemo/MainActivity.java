@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
         mview.setParams(this, monsters);
         mview.setOnTouchListener(new MonsterTouchListener(monsters));
 
-        TextView timer_text = (TextView) findViewById(R.id.textView);
-        score_text = (TextView) findViewById(R.id.textView2);
+        TextView timer_text = (TextView) findViewById(R.id.textView);//THE ISSUE IS HERE
+        score_text = (TextView) findViewById(R.id.textView2);//THE ISSUE IS HERE
 
         score = 0;
         score_text.setText("Score: " + score);
@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         }
         timer_text.setText("time: " + time);
         time--;
+
     }
 
     private void migrate(MonsterView mview, Monsters monsters) {
