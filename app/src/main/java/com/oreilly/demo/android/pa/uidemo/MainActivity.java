@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-
         MonsterView mview = (MonsterView) findViewById(R.id.dots);
         Monsters monsters = new Monsters(4, 4);
         for (int i = 0; i < monsters.n; i++) {
