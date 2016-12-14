@@ -6,7 +6,7 @@ public class Monster {
     public int r; // radius
 
     public enum State {
-        vulnerble, prot
+        vulnerable, prot
     }
     public State state;
 
@@ -17,7 +17,7 @@ public class Monster {
         y = _y;
         r = _r;
 
-        state = State.vulnerble;
+        state = State.vulnerable;
     }
 
     public void setXY(int i, int j) {
@@ -26,6 +26,6 @@ public class Monster {
     }
 
     public boolean canBeEliminated() {
-        return state == State.vulnerble;
+        return state == State.vulnerable;
     }
 }
