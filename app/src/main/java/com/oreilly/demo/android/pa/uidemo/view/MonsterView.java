@@ -45,7 +45,7 @@ public class MonsterView extends GridView {
         monsters = _monsters;
     }
 
-    //so we can set what the mosters look like
+    //so we can set what the monsters look like
     @Override protected void onDraw(final Canvas canvas) {
         Paint paint = new Paint();
         paint.setStyle(Paint.Style.FILL);

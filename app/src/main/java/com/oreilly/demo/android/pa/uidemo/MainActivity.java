@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         score_text.setText("Score: " + score);
 
         time = 10;
-        Timer time_timer = new Timer();
+        final Timer time_timer = new Timer();
         time_timer.schedule(new TimerTask() {
             @Override
             public void run() {
@@ -76,6 +76,21 @@ public class MainActivity extends AppCompatActivity {
         DisplayMetrics metrics = new DisplayMetrics();//need to add this to a function, but this is a start
         //XML as well?
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+
+        reset = (Button) findViewById(R.id.reset);
+        reset.setEnabled(true);
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = getIntent();
+                time_timer.cancel();
+                finish();
+                overridePendingTransition(0, 0);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
+            }
+        });
 
 
     }
@@ -133,14 +148,6 @@ public class MainActivity extends AppCompatActivity {
             }
 
             return true;
-        }
-
-        public void resetButton(View view)
-        {
-           reset =  (Button) findViewById(R.id.reset); //xml add?
-            Intent intent = getIntent();
-            finish();
-            startActivity(intent);
         }
 
         private void clickMonster(View view, int i) {
