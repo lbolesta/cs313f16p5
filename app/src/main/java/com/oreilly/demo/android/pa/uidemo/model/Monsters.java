@@ -1,8 +1,5 @@
 package com.oreilly.demo.android.pa.uidemo.model;
 
-import android.graphics.Point;
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
@@ -45,7 +42,7 @@ public class Monsters {
     }
 
     /**
-     * changing monster state: to protected, then after time returning back to vulnerble
+     * changing monster state: to protected, then after time returning back to vulnerable
      */
     public void changeState() {
         if (monsters.isEmpty()) return;
@@ -60,7 +57,7 @@ public class Monsters {
         return_timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                if (monster != null) monster.state = Monster.State.vulnerble;
+                if (monster != null) monster.state = Monster.State.vulnerable;
                 return_timer.cancel();
 
             }

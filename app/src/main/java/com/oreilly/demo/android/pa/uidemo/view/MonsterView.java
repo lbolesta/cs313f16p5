@@ -55,7 +55,7 @@ public class MonsterView extends GridView {
             Monster monster = monsters.monsters.get(i);
 
             paint.setStyle(Paint.Style.FILL);
-            paint.setColor(monster.state == Monster.State.vulnerble? Color.YELLOW: Color.GREEN);
+            paint.setColor(monster.state == Monster.State.vulnerable ? Color.YELLOW: Color.GREEN);
             canvas.drawCircle(monster.x, monster.y, monster.r, paint);
 
             paint.setStyle(Paint.Style.STROKE);
