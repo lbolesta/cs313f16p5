@@ -1,0 +1,33 @@
+In this project simple Android game was made. Goal is eliminate monsters from game field, touching them. 
+
+To implement this game it was used pattern MVC. So, as a model Monster and Monsters were entities,
+MonsterView as the species,the main application class – MainActivity as a controller.
+
+As for MVA, MVA and traditional MVC both attempt to solve this same problem, but with two different styles of solution.
+Traditional MVC arranges model (e.g., data structures and storage), view (e.g., user interface), and controller
+(e.g., business logic) in a triangle, with model, view, and controller as vertices, so that some information flows
+between the model and views outside of the controller's direct control. The model–view–adapter solves this rather differently
+from the model–view–controller by arranging model, adapter or mediating controller and view linearly without any connections
+whatsoever directly between model and view.
+
+Monster class is designed for monster data storage: the position x, y in the conventional grid, position x, y in the real
+coordinate system, the radius of the monster, and its status as enumeration - vulnerable or protected. Monsters class stores
+a list of monsters, as well as the size of the conventional grid, on which monsters are placed.
+
+MonsterView class is designed to display monsters on the game screen. So, cells drawn, in which monsters are placed.
+Each monster - a circle in his square. And the color of the circle is determined by the state of the monster - it is 
+vulnerableor protected.
+
+In the main class - MainActivity gameplay control occurs. There user touches processing occurs, appropriate action,
+destroying the monster. There also it occurs control monsters move, changing their states, control and time counting.
+Time control, as well as monsters management implemented via the built-timer class java.
+
+Setting up a timer involves creating a Timer object, registering one or more action listeners on it, and starting the timer
+using the start method. For example, the following code creates and starts a timer that fires an action event once per second
+(as specified by the first argument to the Timer constructor). The second argument to the Timer constructor specifies a listener
+to receive the timer's action events.
+
+Timers are constructed by specifying both a delay parameter and an ActionListener. The delay parameter is used to set both the
+initial delay and the delay between event firing, in milliseconds. Once the timer has been started, it waits for the initial 
+delay before firing its first ActionEvent to registered listeners. After this first event, it continues to fire events every
+time the between-event delay has elapsed, until it is stopped.
