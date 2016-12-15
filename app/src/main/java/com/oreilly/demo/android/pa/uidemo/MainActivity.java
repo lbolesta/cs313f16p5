@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
+import android.util.DisplayMetrics;
+import android.widget.Button;
+import android.content.Intent;
 
 import com.oreilly.demo.android.pa.uidemo.model.Monster;
 import com.oreilly.demo.android.pa.uidemo.model.Monsters;
@@ -22,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     /** earned score */
     static int score;
     static TextView score_text;
+    Button reset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
         mview.setParams(this, monsters);
         mview.setOnTouchListener(new MonsterTouchListener(monsters));
 
-        TextView timer_text = (TextView) findViewById(R.id.textView);//THE ISSUE IS HERE
-        score_text = (TextView) findViewById(R.id.textView2);//THE ISSUE IS HERE
+        TextView timer_text = (TextView) findViewById(R.id.textView);
+        score_text = (TextView) findViewById(R.id.textView2);
 
         score = 0;
         score_text.setText("Score: " + score);
@@ -68,6 +72,10 @@ public class MainActivity extends AppCompatActivity {
                 runOnUiThread(() -> changeState(mview, monsters));
             }
         }, 0, 1000);
+
+        DisplayMetrics metrics = new DisplayMetrics();//need to add this to a function, but this is a start
+        //XML as well?
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
 
 
     }
@@ -98,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Touch listener for field and monsters
      */
-    private static final class MonsterTouchListener implements View.OnTouchListener {
+    private final class MonsterTouchListener implements View.OnTouchListener {
 
         Monsters monsters;
         public MonsterTouchListener(Monsters _monsters) {
@@ -125,6 +133,14 @@ public class MainActivity extends AppCompatActivity {
             }
 
             return true;
+        }
+
+        public void resetButton(View view)
+        {
+           reset =  (Button) findViewById(R.id.reset); //xml add?
+            Intent intent = getIntent();
+            finish();
+            startActivity(intent);
         }
 
         private void clickMonster(View view, int i) {

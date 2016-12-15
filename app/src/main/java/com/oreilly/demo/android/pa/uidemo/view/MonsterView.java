@@ -20,8 +20,6 @@ public class MonsterView extends GridView {
 
 
     }
-
-
     /**
      * @param context
      * @param attrs
@@ -41,12 +39,13 @@ public class MonsterView extends GridView {
         setFocusableInTouchMode(true);
     }
 
-
+    //setting the layout params- context for the
     public void setParams(Context context, Monsters _monsters) {
 
         monsters = _monsters;
     }
 
+    //so we can set what the mosters look like
     @Override protected void onDraw(final Canvas canvas) {
         Paint paint = new Paint();
         paint.setStyle(Paint.Style.FILL);
