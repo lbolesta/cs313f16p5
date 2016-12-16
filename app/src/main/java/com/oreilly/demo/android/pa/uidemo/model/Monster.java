@@ -10,19 +10,19 @@ public class Monster {
     }
     public State state;
 
-    public Monster (int _i, int _j, int _x, int _y, int _r) {
+    public Monster (int _i, int _j, int _r) {
         i = _i;
         j = _j;
-        x = _x;
-        y = _y;
         r = _r;
+        x = 3*r/2 + 5*r/2*i;
+        y = 3*r/2 + 5*r/2*j;
 
         state = State.vulnerable;
     }
 
     public void setXY(int i, int j) {
-        x = 150 + 250*j;
-        y = 150 + 250*i;
+        x = 3*r/2 + 5*r/2*i;
+        y = 3*r/2 + 5*r/2*j;
     }
 
     public boolean canBeEliminated() {

@@ -17,8 +17,8 @@ public class Monsters {
         m = _m;
     }
     //adding the monsters of type Monster to the arrayList
-    public void addMonster(int i, int j, int x, int y, int r) {
-        monsters.add(new Monster(i, j, x, y, r));
+    public void addMonster(int i, int j, int r) {
+        monsters.add(new Monster(i, j, r));
     }
 
     /**

@@ -1,5 +1,6 @@
 package com.oreilly.demo.android.pa.uidemo;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
@@ -13,6 +14,7 @@ import com.oreilly.demo.android.pa.uidemo.model.Monster;
 import com.oreilly.demo.android.pa.uidemo.model.Monsters;
 import com.oreilly.demo.android.pa.uidemo.view.MonsterView;
 
+import java.io.Console;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -33,10 +35,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.main);
 
         MonsterView mview = (MonsterView) findViewById(R.id.dots);
-        Monsters monsters = new Monsters(4, 4);
+
+        int width;
+        width = Resources.getSystem().getDisplayMetrics().widthPixels;
+
+        int w = (width-10)/150 - 2;
+
+        //System.console().printf("%",w);
+
+        Monsters monsters = new Monsters(w, w);
         for (int i = 0; i < monsters.n; i++) {
             for (int j = 0; j < monsters.m; j++) {
-                if (Math.random() < 0.7) monsters.addMonster(i, j, 150 + 250*j, 150 + 250*i, 100);
+                if (Math.random() < 0.5) monsters.addMonster(i, j, 75);
             }
         }
         mview.setParams(this, monsters);
@@ -72,10 +82,6 @@ public class MainActivity extends AppCompatActivity {
                 runOnUiThread(() -> changeState(mview, monsters));
             }
         }, 0, 1000);
-
-        DisplayMetrics metrics = new DisplayMetrics();//need to add this to a function, but this is a start
-        //XML as well?
-        getWindowManager().getDefaultDisplay().getMetrics(metrics);
 
 
         reset = (Button) findViewById(R.id.reset);

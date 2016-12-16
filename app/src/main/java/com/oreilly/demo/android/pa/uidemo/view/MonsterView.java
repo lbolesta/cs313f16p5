@@ -1,6 +1,7 @@
 package com.oreilly.demo.android.pa.uidemo.view;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -58,10 +59,10 @@ public class MonsterView extends GridView {
             paint.setColor(monster.state == Monster.State.vulnerable ? Color.YELLOW: Color.GREEN);
             canvas.drawCircle(monster.x, monster.y, monster.r, paint);
 
-            paint.setStyle(Paint.Style.STROKE);
-            paint.setStrokeWidth(5);
-            paint.setColor(Color.BLACK);
-            canvas.drawRect(monster.x - monster.r - 25, monster.y - monster.r - 25, monster.x + monster.r + 25, monster.y + monster.r + 25, paint);
+            //paint.setStyle(Paint.Style.STROKE);
+            //paint.setStrokeWidth(5);
+            //paint.setColor(Color.BLACK);
+            //canvas.drawRect(monster.x - monster.r - 25, monster.y - monster.r - 25, monster.x + monster.r + 25, monster.y + monster.r + 25, paint);
 
         }
     }
