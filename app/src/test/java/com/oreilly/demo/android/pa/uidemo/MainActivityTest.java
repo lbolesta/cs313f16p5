@@ -1,5 +1,7 @@
 package com.oreilly.demo.android.pa.uidemo;
 
+import android.os.Bundle;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -9,8 +11,10 @@ import static org.junit.Assert.*;
  */
 public class MainActivityTest {
     @Test
-    public void onCreate() throws Exception {
-
+    public void onCreate(final Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+     throw new IllegalStateException ("something went wrong");
     }
 
 }
