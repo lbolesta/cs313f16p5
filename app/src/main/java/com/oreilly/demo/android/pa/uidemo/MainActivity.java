@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
-import android.util.DisplayMetrics;
 import android.widget.Button;
 import android.content.Intent;
 
@@ -14,7 +13,6 @@ import com.oreilly.demo.android.pa.uidemo.model.Monster;
 import com.oreilly.demo.android.pa.uidemo.model.Monsters;
 import com.oreilly.demo.android.pa.uidemo.view.MonsterView;
 
-import java.io.Console;
 import java.util.Timer;
 import java.util.TimerTask;
 
